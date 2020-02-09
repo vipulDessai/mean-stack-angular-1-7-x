@@ -1,4 +1,4 @@
-angular.module("helloWorldApp", [
+angular.module("app", [
     "ngRoute",
 ])
 .config([
