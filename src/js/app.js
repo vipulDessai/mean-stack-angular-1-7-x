@@ -11,9 +11,8 @@ angular.module("app", [
                 templateUrl: "/views/home.html",
                 controller: "HomeCtrl",
             })
-            .when("/away", {
-                templateUrl: "/views/away.html",
-                controller: "AwayCtrl",
+            .when("/task", {
+                controller: "taskCtrl",
             });
     }
 ])

@@ -12,6 +12,13 @@ function tasks($http) {
         data: data,
         url : "api/tasks",
       })
-    }
+    },
+    getTasks: function() {
+      return $http({
+        method: "GET",
+        headers: {'Content-Type': 'application/json'},
+        url : "api/tasks",
+      })
+    },
   }
 }
