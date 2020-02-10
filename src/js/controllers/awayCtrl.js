@@ -1,8 +1,9 @@
 angular.module("app")
-    .component("awayCtrl", Away);
+    .controller("awayCtrl", Away);
 
-Away.$inject = ["$scope", "requestService"];
+Away.$inject = ["$scope", "$location", "requestService"];
 
-function Away($scope, requestService) {
-    
+function Away($scope, $location, requestService) {
+    let queryParams = $location.search();
+    $scope.id = queryParams.id;
 }

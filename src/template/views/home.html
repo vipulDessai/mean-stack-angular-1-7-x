@@ -1,5 +1,5 @@
 <h2>Home Controller</h2>
 <button ng-click="postRequest();">Post Request</button>
 <ul>
-  <li ng-repeat="task in tasks">id: {{task._id}}, Name: {{task.name}}</li>
+  <li ng-repeat="task in tasks"><a href="/away?id={{task._id}}">id: {{task._id}}, Name: {{task.name}}</a></li>
 </ul>
