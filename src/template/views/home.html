@@ -1,2 +1,5 @@
-<h2>To do Tasks</h2>
-<button ng-click="postTasks();">Post Tasks</button>
+<h2>Home Controller</h2>
+<button ng-click="postRequest();">Post Request</button>
+<ul>
+  <li ng-repeat="task in tasks">id: {{task._id}}, Name: {{task.name}}</li>
+</ul>

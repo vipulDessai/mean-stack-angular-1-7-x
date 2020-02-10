@@ -1,11 +1,11 @@
 angular.module("app")
-  .service("tasksService", tasks);
+  .service("requestService", requests);
 
-tasks.$inject = ["$http"];
+requests.$inject = ["$http"];
 
-function tasks($http) {
+function requests($http) {
   return {
-    postTasks: function(data) {
+    postRequest: function(data) {
       return $http({
         method: "POST",
         headers: {'Content-Type': 'application/json'},
@@ -13,7 +13,7 @@ function tasks($http) {
         url : "api/tasks",
       })
     },
-    getTasks: function() {
+    getRequest: function() {
       return $http({
         method: "GET",
         headers: {'Content-Type': 'application/json'},

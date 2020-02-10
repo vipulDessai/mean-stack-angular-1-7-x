@@ -1,38 +1,38 @@
 angular.module("app")
-    .controller("HomeCtrl", Home)
+    .controller("homeCtrl", Home)
 
-Home.$inject = ["$scope", "tasksService"];
+Home.$inject = ["$scope", "requestService"];
 
-function Home($scope, tasksService) {
-    this.$onInit = function () {
-        $scope.getTasks();
-    };
+function Home($scope, requestService) {
     var exceptionHandler = function (exception) {
-        console.log(exception)
+        console.log(exception);
     }
 
-    $scope.postTasks = function () {
+    $scope.postRequest = function () {
         var data = {
             name: "foo",
             place: "bar",
         }
-        tasksService.postTasks(data)
+        requestService.postRequest(data)
             .then(
                 function (res) {
-                    console.log(res);
+                    $scope.tasks.push(res.data[0]);
                 },
                 exceptionHandler,
             )
             .catch(exceptionHandler)
     }
-    $scope.getTasks = function() {
-        tasksService.getTasks()
+
+    $scope.tasks = [];
+    $scope.getRequest = function() {
+        requestService.getRequest()
             .then(
                 function (res) {
-                    console.log(res);
+                    $scope.tasks = res.data;
                 },
                 exceptionHandler,
             )
             .catch(exceptionHandler)
     }
+    $scope.getRequest();
 }
