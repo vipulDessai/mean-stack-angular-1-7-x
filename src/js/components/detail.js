@@ -9,7 +9,7 @@ angular.module("app")
     }
   });
 
-detail.$inject = ["$scope"]
+detail.$inject = ["$scope"];
 
 function detail($scope) {
   var ctrl = this;
@@ -17,6 +17,7 @@ function detail($scope) {
   ctrl.$onInit = function() {
     $scope.id = ctrl.task._id;
     $scope.name = ctrl.task.name;
+    $scope.type = ctrl.task.type;
   }
 
   ctrl.delete = function() {

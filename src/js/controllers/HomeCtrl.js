@@ -11,7 +11,7 @@ function Home($scope, requestService) {
     $scope.postRequest = function () {
         var data = {
             name: "foo",
-            place: "bar",
+            type: "bar",
         }
         requestService.postRequest(data)
             .then(
