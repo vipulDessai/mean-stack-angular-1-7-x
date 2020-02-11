@@ -48,11 +48,11 @@ function browserReload() {
 }
 
 exports.start = function(done) {
+    browserReload();
+
     javascript();
     css();
     html();
-
-    browserReload();
 
     if(done)
         done();
