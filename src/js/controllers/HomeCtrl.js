@@ -35,4 +35,15 @@ function Home($scope, requestService) {
             .catch(exceptionHandler)
     }
     $scope.getRequest();
+
+    this.deleteRequest = function(id) {
+        requestService.deleteRequest(id)
+            .then(
+                function(res) {
+                    console.log(res);
+                },
+                exceptionHandler,
+            )
+            .catch(exceptionHandler);
+    }
 }

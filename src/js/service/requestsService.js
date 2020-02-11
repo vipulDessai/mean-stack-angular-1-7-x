@@ -20,5 +20,12 @@ function requests($http) {
         url : "api/tasks",
       })
     },
+    deleteRequest: function(id) {
+      return $http({
+        method: "GET",
+        headers: {'Content-Type': 'application/json'},
+        url : "api/tasks/" + id,
+      })
+    },
   }
 }

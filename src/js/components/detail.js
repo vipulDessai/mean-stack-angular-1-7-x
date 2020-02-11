@@ -4,8 +4,7 @@ angular.module("app")
     controller: detail,
     bindings: {
       task: '<',
-      onDelete: '&',
-      onUpdate: '&'
+      deleteRequest: '&',
     }
   });
 
@@ -20,11 +19,7 @@ function detail($scope) {
     $scope.type = ctrl.task.type;
   }
 
-  ctrl.delete = function() {
-    ctrl.onDelete({task: ctrl.task});
-  };
-
-  ctrl.update = function(prop, value) {
-    ctrl.onUpdate({task: ctrl.task, prop: prop, value: value});
+  $scope.deleteRequest = function(event) {
+    ctrl.deleteRequest({task: ctrl.task});
   };
 }
