@@ -22,10 +22,13 @@ function requests($http) {
     },
     deleteRequest: function(id) {
       return $http({
-        method: "GET",
+        method: "DELETE",
         headers: {'Content-Type': 'application/json'},
         url : "api/tasks/" + id,
       })
     },
+    exceptionHandler: function (exception) {
+      console.log(exception);
+    }
   }
 }

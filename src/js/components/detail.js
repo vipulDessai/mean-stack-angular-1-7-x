@@ -5,7 +5,7 @@ angular.module("app")
     bindings: {
       task: '<',
       deleteRequest: '&',
-    }
+    },
   });
 
 detail.$inject = ["$scope"];
@@ -17,9 +17,11 @@ function detail($scope) {
     $scope.id = ctrl.task._id;
     $scope.name = ctrl.task.name;
     $scope.type = ctrl.task.type;
-  }
+  };
 
   $scope.deleteRequest = function(event) {
+    // the key `task` name shuold match with 
+    // bound function argument name
     ctrl.deleteRequest({task: ctrl.task});
   };
 }
