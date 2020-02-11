@@ -1,27 +1,9 @@
 angular.module("app")
-    .controller("AwayCtrl", away);
+    .controller("awayCtrl", Away);
 
-away.$inject = ["$scope", "tasksService"];
+Away.$inject = ["$scope", "$location", "requestService"];
 
-function away($scope, tasksService) {
-    $scope.message = "this is away component!!";
-
-    var exceptionHandler = function (exception) {
-        console.log(exception)
-    }
-
-    $scope.postTasks = function() {
-        var data = {
-            name: "foo",
-            place: "bar",
-        }
-        tasksService.postTasks(data)
-            .then(
-                function(res) {
-                    console.log(res);
-                },
-                exceptionHandler,
-            )
-            .catch(exceptionHandler)
-    }
+function Away($scope, $location, requestService) {
+    let queryParams = $location.search();
+    $scope.id = queryParams.id;
 }

@@ -9,11 +9,11 @@ angular.module("app", [
         $routeProvider
             .when("/", {
                 templateUrl: "/views/home.html",
-                controller: "HomeCtrl",
+                controller: "homeCtrl",
             })
             .when("/away", {
                 templateUrl: "/views/away.html",
-                controller: "AwayCtrl",
+                controller: "awayCtrl",
             });
     }
 ])

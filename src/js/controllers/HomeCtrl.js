@@ -1,7 +1,8 @@
 angular.module("app")
-    .controller("HomeCtrl", [
-        "$scope",
-        function($scope) {
-            $scope.message = "foo bar!!";
-        }
-    ]);
+    .controller("homeCtrl", Home)
+
+Home.$inject = ["$scope", "requestService"];
+
+function Home($scope, requestService) {
+    
+}
